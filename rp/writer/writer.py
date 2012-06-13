@@ -1,12 +1,18 @@
 from rp.data import data
 import struct
 
+# A few constants used in the Registry.pol header
 POLICY_ENTER_DELIM      = u'['.encode('utf_16_le')
 POLICY_EXIT_DELIM       = u']'.encode('utf_16_le')
 POLICY_SECTION_DELIM    = u';'.encode('utf_16_le')
 POLICY_SECTION_TERM     = u'\0'.encode('utf_16_le')
 
+# Writer class
 class Writer(object):
+    """
+    This class is used to build a registry.pol file off of a RPData object.
+    Currently the RPWriter works.. but could be structured better.
+    """
     def __init__(self, output_file=None, registry_pol=None):
         if (output_file and (registry_pol != None)):
             self.output_file(output_file)
