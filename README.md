@@ -15,6 +15,6 @@ Simple Python script example:
 		pass
 
 ## Registry Policy File Format
-The Registry.pol file is a relativly simple file.  It contains a simple header and a body containing multiple registry policies (entries).
+The Registry.pol file is a relatively simple file.  It contains a simple header and a body containing multiple registry policies (entries).
 
 ... I'll update this more later.
