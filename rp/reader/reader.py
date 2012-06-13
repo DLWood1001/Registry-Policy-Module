@@ -4,7 +4,19 @@ from rp import parser
 import states
 
 class Reader(object):
+    """
+    Registry Policy Reader class.
+    
+    Creates an object that can be used to parse a Registry.pol file.
+    """
+    
     def __init__(self, input_file=None, registry_pol=None):
+        """
+        Initialization method
+        
+        This method creates the Registry.pol file parser.  The parser is another sub-module of the rp class.
+        The states of the parser can be found in the states.py file which is part of the reader module.
+        """
         self.RPParser = parser.Parser()
         
         self.RPParser.add_states(signature=states.Signature, version=states.Version)
