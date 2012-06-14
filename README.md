@@ -14,7 +14,21 @@ Simple Python script example:
 		# Check the 'data' sub module under 'rp' to understand the policy data structure.
 		pass
 
-## Registry Policy File Format
+## Registry.pol File Format
 The Registry.pol file is a relatively simple file.  It contains a simple header and a body containing multiple registry policies (entries).
 
-... I'll update this more later.
+### Header
+Signature = 0x67655250 (4 bytes; Unsigned Int) 
+Version = 0x00000001 (4 bytes; Unsigned Int)
+
+### Body
+The body contains multiple entries encoded UTF16LE in the following format:
+[Key;Value;Type;Size;Data]
+
+Key = null terminated byte array. Note: Encoded in unicode.
+Value = null terminated byte array. Note: Encoded in unicode. 
+Type = 4 bytes; Unsigned Int.  Corrisponds to the windows registry data types.
+Size = 4 bytes; Unsigned Int.
+Data = byte array, depending on the 'Type' field. Note: REG_SZ is encoded in unicode and null terminated.
+
+
