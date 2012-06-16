@@ -1,11 +1,6 @@
 from rp.data import data
 import struct
 
-# A few constants used in the Registry.pol header
-POLICY_ENTER_DELIM      = u'['.encode('utf_16_le')
-POLICY_EXIT_DELIM       = u']'.encode('utf_16_le')
-POLICY_SECTION_DELIM    = u';'.encode('utf_16_le')
-POLICY_SECTION_TERM     = u'\0'.encode('utf_16_le')
 
 # Writer class
 class Writer(object):
