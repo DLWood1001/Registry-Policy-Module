@@ -95,7 +95,8 @@ class RPPolicy(object):
         policy += struct.pack('<I', self.regtype)
         policy += POLICY_SECTION_DELIM
         policy += struct.pack('<I', self.size)
-        
+        policy += POLICY_SECTION_DELIM
+                
         if self.regtype == 1:
             policy += self.data + POLICY_SECTION_TERM
         elif self.regtype == 4:
