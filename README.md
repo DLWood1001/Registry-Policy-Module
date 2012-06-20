@@ -33,17 +33,23 @@ The body contains multiple entries in the following structure:
 	* **\*\*DelVals**: Deletes all values in a key. Use as a value of the associated key.
 	* **\*\*DeleteKeys**: A semicolon-delimited list of keys to delete.
 	* **\*\*SecureKey**: **SecureKey=1 secures the key, giving administrators and the system full control, and giving users read-only access. **SecureKey=0 resets access to the key to whatever is set on the root.
+	
 * **Type**: 4 bytes; Unsigned Int. Directly corrisponds to the windows registry data types.
-	* REG_BINARY REG_DWORD
-	* REG_DWORD_LITTLE_ENDIAN
-	* REG_DWORD_BIG_ENDIAN
-	* REG_EXPAND_SZ
-	* REG_LINK
-	* REG_MULTI_SZ
-	* REG_NONE
-	* REG_QWORD
-	* REG_QWORD_LITTLE_ENDIAN
-	* REG_SZ
+	* REG_NONE (0): No type
+	* REG_SZ (1): String type (ASCII)
+	* REG_EXPAND_SZ (2): String, includes %ENVVAR% (expanded by caller) (ASCII)
+	* REG_BINARY (3): Binary format, callerspecific
+	* REG_DWORD (4): DWORD in little endian format
+	* REG_DWORD_LITTLE_ENDIAN (4): DWORD in little endian format
+	* REG_DWORD_BIG_ENDIAN (5): DWORD in big endian format
+	* REG_LINK (6): Symbolic link (UNICODE)
+	* REG_MULTI_SZ (7): Multiple strings, delimited by \0, terminated by \0\0 (ASCII)
+	* REG_RESOURCE_LIST (8): Resource list? huh?
+	* REG_FULL_RESOURCE_DESCRIPTOR (9): Full resource descriptor? huh?
+	* REG_RESOURCE_REQUIREMENTS_LIST (10):
+	* REG_QWORD (11): QWORD in little endian format
+	* REG_QWORD_LITTLE_ENDIAN (11): QWORD in little endian format
+
 * **Size**: 4 bytes; Unsigned Int.  
 * **Data**: Depending on the 'Type' field. Note: REG_SZ is encoded in UTF-16LE and null terminated.  
 
