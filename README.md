@@ -29,10 +29,11 @@ The body contains multiple entries in the following structure:
 * **Key**: Null terminated byte array encoded in UTF-16LE.  
 * **Value**: Null terminated byte array encoded in UTF-16LE. It is possible for the value to contain a special command in addition or replacement for a typical registry value.
 	* **\*\*DeleteValues**: A semicolon-delimited list of values to delete. Use as a value of the associated key.
-	* **Del.valuename
-	* **DelVals
-	* **DeleteKeys
-	* **SecureKey
+	* **\*\*Del.valuename**: Deletes a single value. Use as a value of the associated key.
+	* **\*\*DelVals**: Deletes all values in a key. Use as a value of the associated key.
+	* **\*\*DeleteKeys**: A semicolon-delimited list of keys to delete. The value field needs to be terminated with a NULL or space immediately after **DeleteKeys.
+Example: **DeleteKeys/0;type;size;NoRun;NoFind
+	* **\*\*SecureKey**: **SecureKey=1 secures the key, giving administrators and the system full control, and giving users read-only access. **SecureKey=0 resets access to the key to whatever is set on the root.
 * **Type**: 4 bytes; Unsigned Int. Directly corrisponds to the windows registry data types.
 	* REG_BINARY REG_DWORD
 	* REG_DWORD_LITTLE_ENDIAN
