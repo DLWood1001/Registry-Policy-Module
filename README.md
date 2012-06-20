@@ -27,7 +27,7 @@ The body contains multiple entries in the following structure:
 
 
 Key = Null terminated byte array encoded in UTF-16LE.  
-Value = Null terminated byte array encoded in UTF-16LE.  
+Value = Null terminated byte array encoded in UTF-16LE. It is possible for the value to contain a special command in addition or replacement for a typical registry value.  
 Type = 4 bytes; Unsigned Int. Directly corrisponds to the windows registry data types.  
 Size = 4 bytes; Unsigned Int.  
 Data = Depending on the 'Type' field. Note: REG_SZ is encoded in UTF-16LE and null terminated.  
