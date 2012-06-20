@@ -23,7 +23,7 @@ Version = 0x00000001 (4 bytes; Unsigned Int)
 
 ### Body
 The body contains multiple entries in the following structure:  
-  [Key;Value;Type;Size;Data]
+	[Key;Value;Type;Size;Data]
 
 
 * **Key**: Null terminated byte array encoded in UTF-16LE.  
