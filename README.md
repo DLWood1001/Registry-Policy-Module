@@ -27,13 +27,23 @@ The body contains multiple entries in the following structure:
 
 
 * **Key**: Null terminated byte array encoded in UTF-16LE.  
-* **Value**: Null terminated byte array encoded in UTF-16LE. It is possible for the value to contain a special command in addition or replacement for a typical registry value.  
-	* **DeleteValues
+* **Value**: Null terminated byte array encoded in UTF-16LE. It is possible for the value to contain a special command in addition or replacement for a typical registry value.
+	* **DeleteValues 
 	* **Del.valuename
 	* **DelVals
 	* **DeleteKeys
 	* **SecureKey
-* **Type**: 4 bytes; Unsigned Int. Directly corrisponds to the windows registry data types.  
+* **Type**: 4 bytes; Unsigned Int. Directly corrisponds to the windows registry data types.
+	* REG_BINARY REG_DWORD
+	* REG_DWORD_LITTLE_ENDIAN
+	* REG_DWORD_BIG_ENDIAN
+	* REG_EXPAND_SZ
+	* REG_LINK
+	* REG_MULTI_SZ
+	* REG_NONE
+	* REG_QWORD
+	* REG_QWORD_LITTLE_ENDIAN
+	* REG_SZ
 * **Size**: 4 bytes; Unsigned Int.  
 * **Data**: Depending on the 'Type' field. Note: REG_SZ is encoded in UTF-16LE and null terminated.  
 
