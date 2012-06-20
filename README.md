@@ -28,7 +28,7 @@ The body contains multiple entries in the following structure:
 
 * **Key**: Null terminated byte array encoded in UTF-16LE.  
 * **Value**: Null terminated byte array encoded in UTF-16LE. It is possible for the value to contain a special command in addition or replacement for a typical registry value.
-	* ** **DeleteValues**: A semicolon-delimited list of values to delete. Use as a value of the associated key.
+	* **\*\*DeleteValues**: A semicolon-delimited list of values to delete. Use as a value of the associated key.
 	* **Del.valuename
 	* **DelVals
 	* **DeleteKeys
