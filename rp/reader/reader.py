@@ -16,6 +16,8 @@ class Reader(object):
         @param input_file: Contains a valid path/to/Registry.pol string.
         @param registry_pol: Contains a valid RPData object.
         """
+        self.input_file = None
+        
         self.RPParser = parser.Parser()
         
         self.RPParser.add_states(signature=states.Signature, version=states.Version)
@@ -23,16 +25,8 @@ class Reader(object):
         self.RPParser.add_states(policy_key=states.PolicyKey, policy_value=states.PolicyValue, policy_reg_type=states.PolicyRegType, policy_size=states.PolicySize, policy_data=states.PolicyData)
         
         if (input_file and (registry_pol != None)):
-            self.input_file(input_file)
+            self.input_file = input_file
             self.read(registry_pol)
-    
-    def input_file(self, input_file):
-        """
-        Method to change the input file of the Reader class.
-        
-        @param input_file: Contains a valid path/to/Registry.pol string.
-        """
-        self.input_file = input_file
     
     def read(self, registry_pol):
         """
