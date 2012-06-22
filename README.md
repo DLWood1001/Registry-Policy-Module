@@ -23,7 +23,7 @@ Simple Python script example:
 	* Convert to companion .reg
 
 ## Registry.pol File Format
-The Registry.pol file is a relatively simple file.  It contains a simple header and a body containing multiple registry policies (entries). Most of the info comtained below is based on (Microsoft's Documentation)[1]
+The Registry.pol file is a relatively simple file.  It contains a simple header and a body containing multiple registry policies (entries). Most of the info comtained below is based on [Microsoft's Documentation][1].
 
  [1]: http://msdn.microsoft.com/en-us/library/windows/desktop/aa374407(v=vs.85).aspx
 
