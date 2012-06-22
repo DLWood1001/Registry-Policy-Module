@@ -14,6 +14,14 @@ Simple Python script example:
 		# Check the 'data' sub module under 'rp' to understand the policy data structure.
 		pass
 
+## ToDo
+* Refactor the name of the 'RPData' class.
+* Refactor the names of the reader > states.py classes.
+* Handle advanced 'values' fields
+* Build 'util' or 'tools' classes
+	* Remove duplicates
+	* Convert to companion .reg
+
 ## Registry.pol File Format
 The Registry.pol file is a relatively simple file.  It contains a simple header and a body containing multiple registry policies (entries).
 
