@@ -123,11 +123,17 @@ class RPPolicy(object):
         policy += POLICY_SECTION_DELIM
         policy += struct.pack('<I', self.size)
         policy += POLICY_SECTION_DELIM
-                
-        if self.regtype == 1:
+        
+        if self.regtype == 0:
+            raise NotImplementedError()
+        elif self.regtype == 1:
             policy += self.data + POLICY_SECTION_TERM
+        elif self.regtype >= 2 || self.regtype <= 3:
+            raise NotImplementedError()
         elif self.regtype == 4:
             policy += struct.pack('<I', self.data)
+        elif self.regtype >= 5 || self.regtype <= 11:
+            raise NotImplementedError()
         
         policy += POLICY_EXIT_DELIM
         
