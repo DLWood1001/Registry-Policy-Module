@@ -199,7 +199,7 @@ class PolicyData(object):
             #define REG_QWORD_LITTLE_ENDIAN 11      /* QWORD in little endian format */
         '''
         
-        if regtype == 0: pass
+        if regtype == 0: policy_data_object = super(PolicyData, class_object).__new__(PolicyDataREG_NONE)
         elif regtype == 1: policy_data_object = super(PolicyData, class_object).__new__(PolicyDataREG_SZ)
         elif regtype == 2: raise NotImplementedError('Data type 2 is not implemented')
         elif regtype == 3: raise NotImplementedError('Data type 3 is not implemented')
@@ -217,6 +217,19 @@ class PolicyData(object):
         
         return policy_data_object
     
+
+class PolicyDataREG_NONE(State):
+    def __init__(self, memory):
+        self.memory         = memory
+        
+        self.data_size      = 0
+        self.next_state     = 'policy_exit'
+        
+        self.reg_sz         = u''.encode('utf_16_le')
+    
+    def process(self, data):
+        return True
+
 
 class PolicyDataREG_SZ(State):
     def __init__(self, memory):

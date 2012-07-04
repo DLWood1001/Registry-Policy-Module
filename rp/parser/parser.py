@@ -23,15 +23,16 @@ class Parser(object):
             
             data_size = state.data_size
             
-            while (True):
+            if data_size > 0:
+                while (True):
                 
-                data = self.file_handle.read(data_size)
+                    data = self.file_handle.read(data_size)
                 
-                if not data:
-                    return True
+                    if not data:
+                        return True
                 
-                if (state.process(data)):
-                    break
+                    if (state.process(data)):
+                        break
             
             next_state = state.next_state
             
