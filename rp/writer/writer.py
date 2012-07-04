@@ -22,7 +22,7 @@ class Writer(object):
         
         header = data.RPHeader()
         
-        file_handle = open(self.output_file, 'w')
+        file_handle = open(self.output_file, 'wb')
         
         # Write file header
         file_handle.write(str(registry_pol))

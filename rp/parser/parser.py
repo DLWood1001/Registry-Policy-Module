@@ -13,7 +13,7 @@ class Parser(object):
             self.add_state(state_name, state_value)
 
     def parse(self, file_name, initial_state, initial_memory):
-        self.file_handle = open(file_name, 'r')
+        self.file_handle = open(file_name, 'rb')
         self.memory = initial_memory
         
         next_state = initial_state
