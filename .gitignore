@@ -1,2 +1,5 @@
+# Ignore Python Bytecode.
 *.pyc
+
+# Ignore Apple OSX hidden files.
 .DS_Store
