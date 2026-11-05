@@ -1,6 +1,8 @@
 README.md
 =========
 
+### Note: This is a legacy project. Do not use this for anything besides educational, and even then some of it is suspect.
+
 rp is python module used to parse Registry.pol files. The Registry.pol is the location where Microsoft stores the settings created through Authentication Templates. This is only useful for the sys admins out there.
 
 ## Basic Usage
